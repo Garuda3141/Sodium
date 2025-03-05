@@ -1,0 +1,55 @@
+{
+    "notes": {
+        "Q": "/Users/sudarshan/Desktop/gg3141/code/projects/sodium/notes/Q.na.md",
+        "IM_1": "/Users/sudarshan/Desktop/gg3141/code/projects/sodium/notes/IM_1.na.md",
+        "AS": "/Users/sudarshan/Desktop/gg3141/code/projects/sodium/notes/AS.na.md",
+        "idealism": "/Users/sudarshan/Desktop/gg3141/code/projects/sodium/notes/idealism.na.md",
+        "Note": "/Users/sudarshan/Desktop/gg3141/code/projects/sodium/notes/Note.na.md",
+        "CV": "/Users/sudarshan/Desktop/gg3141/code/projects/sodium/notes/CV.na.md",
+        "ECHO": "/Users/sudarshan/Desktop/gg3141/code/projects/sodium/notes/ECHO.na.md"
+    },
+    "links": {
+        "idealism": [
+            "Note",
+            "Q"
+        ],
+        "Note": [
+            "idealism",
+            "IM_1"
+        ],
+        "Q": [
+            "AS",
+            "idealism"
+        ],
+        "AS": [
+            "Q"
+        ],
+        "IM_1": [
+            "Note"
+        ],
+        "CV": [
+            "ECHO"
+        ],
+        "ECHO": [
+            "CV"
+        ]
+    },
+    "tags": {
+        "film": [
+            "Q",
+            "AS",
+            "IM_1"
+        ],
+        "project": [
+            "CV",
+            "ECHO"
+        ],
+        "thoughts": [
+            "idealism",
+            "Note"
+        ]
+    },
+    "logs": {
+        "date": "5/march/2025"
+    }
+}
