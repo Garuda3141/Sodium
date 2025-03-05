@@ -1,5 +1,5 @@
 # Sodium
-A Graph-Based Note Taker by Sudharshan K aka. <Garuda3141>
+A Graph-Based Note Taker by Sudharshan K.
 
 Sodium is a command-line tool designed to function as a **CLI-based Second Brain**. It enables users to create, manage, and analyze bidirectional note relationships within the command line. The tool allows note linking, searching, tagging, visualization, and graph-based analysis.
 
