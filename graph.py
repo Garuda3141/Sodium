@@ -134,6 +134,7 @@ class Graph:
         for tag, notes in self.graph["tags"].items():
             print(f"#{tag}: {', '.join(notes)}")
 
+
     def init_graph(self):
         for filename in os.listdir(self.notes_dir):
             if filename.endswith(".na.md"):
@@ -142,8 +143,24 @@ class Graph:
                     note_path = os.path.join(self.notes_dir, filename)
                     self.graph["notes"][title] = note_path
                     print(f"Found and added note: {title}")
+        self.auto_create_links()
         self.save_graph()
 
+    def auto_create_links(self):
+        """Automatically create links based on wiki-style references in notes."""
+        link_pattern = re.compile(r'\[\[(.*?)\]\]')
+        
+        for note, path in self.graph["notes"].items():
+            try:
+                with open(path, "r") as f:
+                    content = f.read()
+                    links = link_pattern.findall(content)
+                    for linked_note in links:
+                        if linked_note in self.graph["notes"] and linked_note not in self.graph["links"].get(note, []):
+                            self.create_link(note, linked_note)
+            except FileNotFoundError:
+                print(f"Warning: Note file '{path}' not found.")
+                
     def remove_note(self, title):
         """
         Remove a note from the graph, delete its file, and clean up associated links and tags.
@@ -182,6 +199,3 @@ class Graph:
         # Save changes to graph.json
         self.save_graph()
         print(f"Note '{title}' removed successfully.")
-
-
-
