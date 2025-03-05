@@ -1,6 +1,5 @@
 # Sodium
 A Graph-Based Note Taker
-# Sodium CLI
 
 Sodium is a command-line tool designed to function as a **CLI-based Second Brain**. It enables users to create, manage, and analyze bidirectional note relationships within the command line. The tool allows note linking, searching, tagging, visualization, and graph-based analysis.
 
