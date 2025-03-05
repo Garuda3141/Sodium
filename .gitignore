@@ -1,4 +1,5 @@
 .DS_Store
 .env
-__pycahce__
+__pycache__
 ./sodium/graph.json
+notes
