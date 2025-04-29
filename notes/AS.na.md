@@ -164,4 +164,8 @@ of the rooftop. The screen fades to black, leaving only the
 echo of their footsteps.)
 FADE OUT.
 END CREDITS.
+
+
+[[gg_razor]]
+
 [[Q]]

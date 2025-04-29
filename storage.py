@@ -10,7 +10,7 @@ load_dotenv()
 # Use environment variables
 GRAPH_FILE = os.getenv("GRAPH_FILE", os.path.expanduser("~/.sodium/graph.json"))
 NOTES_DIR = os.getenv("NOTES_DIR", "notes/")
-DEFAULT_EDITOR = os.getenv("EDITOR", "subl")
+DEFAULT_EDITOR = os.getenv("EDITOR", "nvim")
 
 graph = Graph(GRAPH_FILE, NOTES_DIR)
 

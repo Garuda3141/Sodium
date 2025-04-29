@@ -38,4 +38,9 @@ CV —help
 Displays flags and usage
 [[ECHO]]
 
-[[ECHO]]
+
+[[Check]]
+
+[[happiness]]
+
+[[happiness]]

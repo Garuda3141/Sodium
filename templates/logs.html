@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+
+{% block title %}View Logs - Sodium{% endblock %}
+
+{% block content %}
+    <header>
+        <h1>Sodium Knowledge Management - Logs</h1>
+        <a href="{{ url_for('index') }}">Back to Homepage</a>
+    </header>
+
+    <div class="container">
+        <h2>All Logs</h2>
+
+        {% if logs %}
+            <table class="logs-table">
+                <thead>
+                    <tr>
+                        <th>Title</th>
+                        <th>Log Content</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for title, content in logs.items() %}
+                        <tr>
+                            <td><strong>{{ title }}</strong></td>
+                            <td><pre>{{ content }}</pre></td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        {% else %}
+            <p>No logs available.</p>
+        {% endif %}
+    </div>
+
+    <footer>
+        <p>&copy; Garuda</p>
+    </footer>
+{% endblock %}

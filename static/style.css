@@ -1,0 +1,97 @@
+/* Log Section Styles */
+.log-section {
+    margin: 20px 0;
+    padding: 20px;
+    border: 1px solid #ddd;
+    background-color: #f9f9f9;
+}
+
+.log-section h2 {
+    margin-bottom: 15px;
+}
+
+.log-section label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.log-section input,
+.log-section textarea {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.log-section button {
+    padding: 10px 15px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.log-section button:hover {
+    background-color: #0056b3;
+}
+
+/* Flash Message Styles */
+.flashes {
+    list-style-type: none;
+    padding: 0;
+}
+
+.flashes li {
+    padding: 10px;
+    margin: 5px 0;
+    border-radius: 4px;
+}
+
+.flashes .success {
+    background-color: #d4edda;
+    color: #155724;
+}
+
+.flashes .warning {
+    background-color: #fff3cd;
+    color: #856404;
+}
+
+.flashes .info {
+    background-color: #d1ecf1;
+    color: #0c5460;
+}
+
+/* Logs Table Styles */
+.logs-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    font-family: Arial, sans-serif;
+}
+
+.logs-table th, .logs-table td {
+    padding: 12px;
+    border: 1px solid #ddd;
+    text-align: left;
+    vertical-align: top;
+}
+
+.logs-table th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+}
+
+/* Preserve formatting of logs */
+.logs-table pre {
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    font-family: "Courier New", monospace;
+    background-color: #f4f4f4;
+    padding: 10px;
+    border-radius: 5px;
+}
+

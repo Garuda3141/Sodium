@@ -71,8 +71,7 @@ all of these options are equally valid and sound
 hope this proves my case
 
 "there is no perfection, meaning of life is uncertain (1/4) chance of being right”
-[[Note.na.md]]
 
-[[Note]]
+[[on_god]]
 
-[[Q]]
+[[happiness]]

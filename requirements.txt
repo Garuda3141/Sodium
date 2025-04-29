@@ -1,0 +1,6 @@
+argparse
+python-dotenv
+networkx
+matplotlib
+numpy
+seaborn

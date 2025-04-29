@@ -54,6 +54,20 @@ class Graph:
         self.save_graph()
         print(f"Linked {note1} <-> {note2}")
 
+    def create_ref(self, note1, note2):
+        """Create a bidirectional link between two notes."""
+        if note1 not in self.graph["notes"] or note2 not in self.graph["notes"]:
+            print("One or both notes do not exist.")
+            return
+
+        # Insert [[note2]] into note1
+        self._insert_link(note1, note2)
+
+        # Update graph structure
+        self.graph["links"].setdefault(note1, []).append(note2)
+        self.save_graph()
+        print(f"Linked {note1} -> {note2}")
+
     def _insert_link(self, note, target):
         """Insert a wiki-style link [[target]] into note."""
         path = self.graph["notes"][note]
@@ -134,16 +148,48 @@ class Graph:
         for tag, notes in self.graph["tags"].items():
             print(f"#{tag}: {', '.join(notes)}")
 
+
     def init_graph(self):
+        # Initialize the graph with unique notes and remove any duplicates
         for filename in os.listdir(self.notes_dir):
             if filename.endswith(".na.md"):
                 title = filename[:-6]
+                note_path = os.path.join(self.notes_dir, filename)
+                
+                # Only add note if it doesn't already exist in the graph
                 if title not in self.graph["notes"]:
-                    note_path = os.path.join(self.notes_dir, filename)
                     self.graph["notes"][title] = note_path
                     print(f"Found and added note: {title}")
+                else:
+                    print(f"Duplicate found, skipping note: {title}")
+
+        # Remove duplicates in links and tags
+        for note, linked_notes in self.graph["links"].items():
+            self.graph["links"][note] = list(set(linked_notes))  # Remove duplicate links
+
+        for tag, notes in self.graph["tags"].items():
+            self.graph["tags"][tag] = list(set(notes))  # Remove duplicate tags
+
+        # Auto-create links and save the graph
+        self.auto_create_links()
         self.save_graph()
 
+
+    def auto_create_links(self):
+        """Automatically create links based on wiki-style references in notes."""
+        link_pattern = re.compile(r'\[\[(.*?)\]\]')
+        
+        for note, path in self.graph["notes"].items():
+            try:
+                with open(path, "r") as f:
+                    content = f.read()
+                    links = link_pattern.findall(content)
+                    for linked_note in links:
+                        if linked_note in self.graph["notes"] and linked_note not in self.graph["links"].get(note, []):
+                            self.create_link(note, linked_note)
+            except FileNotFoundError:
+                print(f"Warning: Note file '{path}' not found.")
+                
     def remove_note(self, title):
         """
         Remove a note from the graph, delete its file, and clean up associated links and tags.

@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+{% block title %}{{ title }}{% endblock %}
+{% block content %}
+<h1>📝 {{ title }}</h1>
+
+<p>
+  <a href="{{ url_for('edit_note', title=title) }}" class="button">Edit</a>
+  <a href="{{ url_for('open_in_editor', title=title) }}" class="button">Open in Editor</a>
+  <form method="post" action="{{ url_for('delete_note', title=title) }}" style="display:inline;" onsubmit="return confirm('Delete this note?');">
+    <button type="submit" class="button" style="background:#c44;">Delete</button>
+  </form>
+</p>
+
+<pre style="white-space: pre-wrap;">{{ content }}</pre>
+
+<h3>🔗 Links</h3>
+<ul>
+  {% for link in links %}
+    <li><a href="{{ url_for('view_note', title=link) }}">{{ link }}</a></li>
+  {% else %}
+    <li><em>No outgoing links</em></li>
+  {% endfor %}
+</ul>
+
+
+
+<h3>🏷 Tags</h3>
+<p>
+  {% for tag in tags %}
+    <span class="tag">{{ tag }}</span>
+  {% else %}
+    <em>No tags</em>
+  {% endfor %}
+</p>
+
+<h3>Add Tag</h3>
+<form method="post" action="/tag">
+  <input type="hidden" name="note" value="{{ title }}">
+  <input type="text" name="tag" placeholder="Tag name" required>
+  <button type="submit" class="button">Add</button>
+</form>
+
+<h3>Link to Another Note</h3>
+<form method="post" action="/link">
+  <input type="hidden" name="note1" value="{{ title }}">
+  <input type="text" name="note2" placeholder="Link to..." required>
+  <button type="submit" class="button">Link</button>
+</form>
+
+
+{% endblock %}

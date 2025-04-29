@@ -65,10 +65,7 @@ OUT OF SHOT:
 P1 stabs D1, slashes D2 
 FADE OUT. 
 
-[[R]]
-
-[[R]]
+[[idealism]]
 
 [[AS]]
 
-[[idealism]]

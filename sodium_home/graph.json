@@ -6,38 +6,76 @@
         "idealism": "/Users/sudarshan/Desktop/gg3141/code/projects/sodium/notes/idealism.na.md",
         "Note": "/Users/sudarshan/Desktop/gg3141/code/projects/sodium/notes/Note.na.md",
         "CV": "/Users/sudarshan/Desktop/gg3141/code/projects/sodium/notes/CV.na.md",
-        "ECHO": "/Users/sudarshan/Desktop/gg3141/code/projects/sodium/notes/ECHO.na.md"
+        "ECHO": "/Users/sudarshan/Desktop/gg3141/code/projects/sodium/notes/ECHO.na.md",
+        "gg_razor": "/Users/sudarshan/Desktop/gg3141/code/projects/sodium/notes/gg_razor.na.md",
+        "on_god": "/Users/sudarshan/Desktop/gg3141/code/projects/sodium/notes/on_god.na.md",
+        "happiness": "/Users/sudarshan/Desktop/gg3141/code/projects/sodium/notes/happiness.na.md",
+        "loss": "/Users/sudarshan/Desktop/gg3141/code/projects/sodium/notes/loss.na.md",
+        "outofplace": "/Users/sudarshan/Desktop/gg3141/code/projects/sodium/notes/outofplace.na.md",
+        "ideas": "/Users/sudarshan/Desktop/gg3141/code/projects/sodium/notes/ideas.na.md",
+        "self_improvement": "/Users/sudarshan/Desktop/gg3141/code/projects/sodium/notes/self_improvement.na.md",
+        "earth": "/Users/sudarshan/Desktop/gg3141/code/projects/sodium/notes/earth.na.md"
     },
     "links": {
         "idealism": [
+            "happiness",
             "Note",
-            "Q"
+            "Q",
+            "on_god"
         ],
         "Note": [
             "idealism",
-            "IM_1"
+            "IM_1",
+            "happiness"
         ],
         "Q": [
             "AS",
-            "idealism"
+            "idealism",
+            "IM_1"
         ],
         "AS": [
-            "Q"
+            "Q",
+            "gg_razor"
         ],
         "IM_1": [
-            "Note"
+            "Note",
+            "outofplace"
         ],
         "CV": [
+            "happiness",
             "ECHO"
         ],
         "ECHO": [
             "CV"
+        ],
+        "gg_razor": [
+            "AS",
+            "on_god"
+        ],
+        "on_god": [
+            "idealism",
+            "happiness",
+            "gg_razor"
+        ],
+        "happiness": [
+            "idealism",
+            "loss",
+            "CV",
+            "on_god",
+            "Note"
+        ],
+        "outofplace": [
+            "IM_1"
+        ],
+        "loss": [
+            "happiness"
         ]
     },
     "tags": {
         "film": [
-            "Q",
             "AS",
+            "Q",
+            "outofplace",
             "IM_1"
         ],
         "project": [
@@ -46,10 +84,15 @@
         ],
         "thoughts": [
             "idealism",
-            "Note"
+            "happiness",
+            "gg_razor",
+            "Note",
+            "on_god"
         ]
     },
     "logs": {
-        "date": "5/march/2025"
+        "kingsman116@tuta.io": "5130 8bb1 bd55 f2c0 e861 a5f7 1166 9f02 f089 67a0 cd89 5fde e3c1 c395 75a3 1c1c",
+        "tab ip": "inet 192.168.1.15/24\n",
+        "Time": "12:57"
     }
 }

@@ -1,0 +1,59 @@
+{% extends "base.html" %}
+{% block title %}{{ title }}{% endblock %}
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sodium</title>
+
+</head>
+<body>
+    <header>
+        <h1 style="text-align: center;">Sodium: A Minimalist Note Taking App</h1>
+    </header>
+
+    <div class="container">
+        <!-- Flash message for log submission -->
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                <ul class="flashes">
+                    {% for category, message in messages %}
+                        <li class="{{ category }}">{{ message }}</li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+        {% endwith %}
+
+        <!-- Log submission form -->
+        <section class="log-section">
+            <h2>Add a New Log</h2>
+            <form method="POST">
+                <label for="log_title">Log Title:</label>
+                <input type="text" id="log_title" name="log_title" required>
+
+                <label for="log_text">Log Text:</label>
+                <input type="text" id="log_text" name="log_text" required>
+
+                <button type="submit" class="btn">Add Log</button>
+            </form>
+        </section>
+
+        <!-- Notes List -->
+        <h2>Notes</h2>
+        <ul>
+            {% for note in notes %}
+                <li><a href="{{ url_for('view_note', title=note) }}">{{ note }}</a></li>
+            {% endfor %}
+        </ul>
+    </div>
+
+    <footer>
+        <p>&copy; Garuda</p>
+    </footer>
+</body>
+</html>
+
+{% endblock %}
+
